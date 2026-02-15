@@ -1,6 +1,16 @@
-<link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Tu primera moto</title>
+   <link rel="stylesheet" href="style.css">
    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
+   <script type="text/javascript">
+      (function(){
+         emailjs.init("LA_TEVA_PUBLIC_KEY");
+      })();
+   </script>
+</head>
+<body>
 <table cellpadding="8" cellspacing="2" border="0" width="100%">
 <tr>
   <td><h2 id="titol" onmouseover="canviarColor()" onmouseout="restaurarColor()">TU PRIMERA MOTO</h2></td>
@@ -96,3 +106,50 @@
   </td>
 </tr>
 </table>
+<script>
+    function canviarColor() {
+        document.getElementById("titol").style.color = "red";
+    }
+
+    function restaurarColor() {
+        document.getElementById("titol").style.color = "black";
+    }
+
+    function seleccionarMoto(nom, preu) {
+        alert("Moto seleccionada: " + nom + "\nPreu: " + preu + "€");
+    }
+
+    function modeNit() {
+        let cos = document.body;
+        if (cos.style.backgroundColor === "black") {
+            cos.style.backgroundColor = "#c0c0c0";
+            cos.style.color = "black";
+        } else {
+            cos.style.backgroundColor = "black";
+            cos.style.color = "white";
+        }
+    }
+
+    function enviarCorreu() {
+        let nom = document.getElementById("nom_user").value;
+        let mis = document.getElementById("missatge_user").value;
+
+        if (nom === "" || mis === "") {
+            alert("Introdueix nom i missatge");
+        } else {
+            let params = {
+                from_name: nom,
+                message: mis
+            };
+            emailjs.send("SERVICE_ID", "TEMPLATE_ID", params)
+            .then(function() {
+                alert("Enviat!");
+                document.getElementById("missatge_user").value = "";
+            }, function() {
+                alert("Error");
+            });
+        }
+    }
+</script>
+</body>
+</html>
