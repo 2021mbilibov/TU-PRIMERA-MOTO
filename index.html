@@ -1,15 +1,13 @@
-<html>
-<head>
-   <title>Tu primera moto</title>
-   <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<link rel="stylesheet" href="style.css">
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 <table cellpadding="8" cellspacing="2" border="0" width="100%">
 <tr>
-  <td><h2>TU PRIMERA MOTO</h2></td>
+  <td><h2 id="titol" onmouseover="canviarColor()" onmouseout="restaurarColor()">TU PRIMERA MOTO</h2></td>
   <td align="right">
-    <a href="#"><button>Buscar 🔍</button></a>
-    <a href="#"><button>Cesta 🛒</button></a>
+    <button onclick="alert('Buscant...')">Buscar 🔍</button>
+    <button onclick="alert('Cistella buida')">Cesta 🛒</button>
+    <button onclick="modeNit()">🌙</button>
   </td>
 </tr>
 <tr>
@@ -19,25 +17,25 @@
         <td align="center">
           <img src="https://azwecdnepstoragewebsiteuploads.azureedge.net/PHO_BIKE_90_REVO_MY24-KTM-RC-125-STUDIO-EU-blue-90-front-right_%23SALL_%23AEPI_%23V1.png" width="200" height="130" alt="KTM 125 RC"><br>
           KTM 125 RC<br>
-          <a href="#"><button>COMPRAR</button></a><br>
+          <button onclick="seleccionarMoto('KTM 125 RC', 5819)">COMPRAR</button><br>
           5,819€
         </td>
         <td align="center">
           <img src="https://azwecdnepstoragewebsiteuploads.azureedge.net/PHO_BIKE_PERS_REVO_MY24-KTM-125-DUKE-ORANGE-FRONT-RIGHT_%23SALL_%23AEPI_%23V1.png" width="200" height="130" alt="KTM 125 DUKE"><br>
           KTM 125 DUKE<br>
-          <a href="#"><button>COMPRAR</button></a><br>
+          <button onclick="seleccionarMoto('KTM 125 DUKE', 5599)">COMPRAR</button><br>
           5,599€
         </td>
         <td align="center">
           <img src="https://i.postimg.cc/SNj4tf9H/2025-Yamaha-MT125-A-EU-Tech-Black-360-Degrees-001-03-removebg-preview.png" width="200" height="130" alt="Yamaha MT125"><br>
           YAMAHA MT125<br>
-          <a href="#"><button>COMPRAR</button></a><br>
+          <button onclick="seleccionarMoto('YAMAHA MT125', 5449)">COMPRAR</button><br>
           5,449€
         </td>
         <td align="center">
           <img src="https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/24MY_Ninja_125_GN1_STU__1_.png" width="200" height="130" alt="Kawasaki Ninja 125"><br>
           KAWASAKI NINJA 125<br>
-          <a href="#"><button>COMPRAR</button></a><br>
+          <button onclick="seleccionarMoto('KAWASAKI NINJA 125', 5399)">COMPRAR</button><br>
           5,399€
         </td>
       </tr>
@@ -45,30 +43,39 @@
         <td align="center">
           <img src="https://wlassets.aprilia.com/wlassets/aprilia/master/Range/RS_125/family_page/2025/tab/Aprilia_RS-125_Close-Up_900x675_Intera_1/original/Aprilia_RS-125_Close-Up_900x675_Intera_1.png?1741174853387" width="200" height="130" alt="Aprilia RS 125"><br>
           APRILIA RS 125<br>
-          <a href="#"><button>COMPRAR</button></a><br>
+          <button onclick="seleccionarMoto('APRILIA RS 125', 4999)">COMPRAR</button><br>
           4,999€
         </td>
         <td align="center">
           <img src="https://i.postimg.cc/k4FMqMMV/honda-cb-125-r-servihonda-scaled-removebg-preview.png" width="200" height="130" alt="Honda CB125R"><br>
           HONDA CB125R<br>
-          <a href="#"><button>COMPRAR</button></a><br>
+          <button onclick="seleccionarMoto('HONDA CB125R', 4925)">COMPRAR</button><br>
           4,925€
         </td>
         <td align="center">
           <img src="https://wlassets.aprilia.com/wlassets/aprilia/master/Range/RX/family_page/2025/tab/Aprilia_RX-125_PDF_Tabs_900x675_Intera_1/original/Aprilia_RX-125_PDF_Tabs_900x675_Intera_1.png?1743171005691" width="200" height="130" alt="Aprilia RX125"><br>
           APRILIA RX125<br>
-          <a href="#"><button>COMPRAR</button></a><br>
+          <button onclick="seleccionarMoto('APRILIA RX125', 3599)">COMPRAR</button><br>
           3,599€
         </td>
         <td align="center">
           <img src="https://quadismotostore.es/wp-content/uploads/2023/12/VOGE-125R.png" width="200" height="130" alt="Zontes U125"><br>
           ZONTES U125<br>
-          <a href="#"><button>COMPRAR</button></a><br>
+          <button onclick="seleccionarMoto('ZONTES U125', 3287)">COMPRAR</button><br>
           3,287€
         </td>
       </tr>
     </table>
   </td>
+</tr>
+<tr>
+    <td colspan="2" align="center">
+        <br>
+        <input type="text" id="nom_user" placeholder="Nom">
+        <input type="text" id="missatge_user" placeholder="Missatge" style="width: 300px;">
+        <button onclick="enviarCorreu()">ENVIAR</button>
+        <br><br>
+    </td>
 </tr>
 <tr>
   <td>
